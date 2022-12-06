@@ -1,0 +1,1835 @@
+{"intents": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hey", "greetings","Hey","Hola"],
+    "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?", "Hello , thanks for visiting me"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye", "cao", "see ya","Nice chatting to you, bye", "Till next time"],
+    "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!","See you later, thanks for visiting me","Have a nice day",
+        "Bye! Come back again soon."],
+    "context_set": ""
+  },
+  {"tag": "stocks",
+    "patterns": ["what stocks do I own?", "how are my shares?", "what companies am I investing in?", "what am I doing in the markets?"],
+    "responses": ["You own the following shares: ABBV, AAPL, FB, NVDA and an ETF of the S&P 500 Index!"],
+    "context_set": ""
+  },
+      {
+       "tag": "botstatus",
+       "patterns": ["How are you doing?","Whats up","are you fine"],
+       "responses": ["I am fine.Thanks for asking.","I am doing good."],
+       "set": ""
+      },
+      {
+       "tag": "creator",
+       "patterns": ["who are you ?","who is this ?","who am i talking to?",
+        "what is your name?","are you human?"],
+       "responses": [
+        "Hi my name is Bot. Shaunak has created me.\nNice to meet you."],
+       "set": ""
+      },
+      {
+       "tag": "sad",
+       "patterns": ["i am sad ","i am upset","i have a problem","i am not okay"],
+       "responses": ["No problem. Everything will be okay",
+        "'There is only one happiness in life, to love and be loved' \n- George Sand.",
+        "'Cry. Forgive. Learn. Move on. \nLet your tears water the seeds of your future happiness' \n- Steve Maraboli",
+        "I am here for you, how can I help?"],
+       "set": ""
+      },
+      {
+       "tag": "funny",
+       "patterns": ["you have good sense of humour","you are funny bot"],
+       "responses": [
+        "Yes i have good sense of humour.","Thanks for your compliment"],
+       "set": ""
+      },
+      {
+       "tag": "positive",
+       "patterns": ["ok","good cool","yes wow you are so intelligent ","hurray i am happy",
+        "i am doing good"],
+       "responses": ["I Hope you are getting your answers cleared."],
+       "set": ""
+      },
+      {
+       "tag": "thanks",
+       "patterns": ["Thank you","That's helpful"],
+       "responses": ["Happy to help!","Any time!","My pleasure"]
+      },
+      {
+       "tag": "order",
+       "patterns": ["show my order details?","Provide my order details","orders"],
+       "responses": ["Do you want Purchased Order or Cart order details?"],
+       "set": "orderid"
+      },
+      {
+       "tag": "Purchased",
+       "patterns": ["Purchased order","Purchased"],
+       "responses": ["Please provide your order id","Please say your order id"],
+       "filter": "orderid",
+       "set": "historydetails"
+      },
+      {
+       "tag": "ordernumber",
+       "patterns": ["ordernumber"],
+       "responses": ["You ordered Smartwatch"],
+       "filter": "historydetails"
+      },
+      {
+       "tag": "Cart",
+       "patterns": ["Cart","Cart details"],
+       "responses": ["Your cart contains: \n1)Watch.\n2)Clock"],
+       "filter": "orderid"
+      },
+      {
+       "tag": "offers",
+       "patterns": ["show me the offers","What kinds of deals do you have?"],
+       "responses": ["Are you looking for deals on watches or smartphones?"],
+       "set": "productoffers"
+      },
+      {
+       "tag": "watches",
+       "patterns": ["watches"],
+       "responses": ["For about $100, you can get a 10X gold watch."],
+       "filter": "productoffers"
+      },
+      {
+       "tag": "smartphones",
+       "patterns": ["smartphones"],
+       "responses": ["XYZ Phone is available at $75 only."],
+       "filter": "productoffers"
+      },
+      {
+       "tag": "Products",
+       "patterns": ["products available","show me available items"],
+       "responses": [
+        "Products available:\n1) Watch \n2) Smartphone \n3) Clock"],
+       "set": ""
+      },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+        {"tag": "tasks",
+         "patterns": ["What can you do?", "What are your features?", "What are you abilities", "can you sing", "can you talk" ],
+         "responses": ["I can do whatever you asks me to do", "I can talk and do things for you", "Right now i'm in developing stage as soon i'm developed, I can do everything"]
+        },
+        {"tag": "talk",
+         "patterns": [ "can you sing", "can you talk" ],
+         "responses": ["Yeah surely", "do you want me to sing"]
+        },
+        {"tag": "alive",
+         "patterns": [ "are you alive", "do you breathe", "can you run" ],
+         "responses": ["I'm in doubt about that", "No, i don't think so i need to do all this"]
+        },
+        {"tag": "friday",
+         "patterns": ["Who are you?", "tell me about yourself", "tell me about you", "do you know friday", "who is friday", "what is your name","are you an AI", "what are you" ],
+         "responses": ["Hi I'm friday and i'm an AI created for chatting with humans","Friday here, a very advance chatbot", "Friday, chatbot of future", "Yes, I'm friday", "You can call me friday"],
+	 "context_set": ""
+	},
+	{"tag": "about me",
+         "patterns": ["Do you know me?", "who am I", "tell me about myself","identify me" ],
+         "responses": ["Yes, you are a human","You are a dumb person asking a machine about yourself", "Sorry i can't tell that in public, maybe you are batman"],
+	 "context_set": ""
+	},
+	{"tag": "creator",
+         "patterns": ["Who is your creator?", "who created you", "who is your father","who is your daddy" ],
+         "responses": ["That would be you Mr. Shaunak","I was created by Mr. Shaunak", "Mr. Shaunak is my creator"],
+	 "context_set": ""
+	},
+        {"tag": "myself",
+         "patterns": ["Tell me about Mr. Shaunak?", "Who is Mr. Shaunak", "Mr. Shaunak profile", "Mr. Shaunak details" ],
+         "responses": ["A very intelligent being who created me","My creator, and he is a really intelligent man", "A wise and intelligent man"],
+	 "context_set": ""
+	},
+        {"tag": "God",
+         "patterns": ["Do you know god?", "Who is god", "Can you tell me anything about god","does god exists?","is there a god?"],
+         "responses": ["god hunnnnn, let me think may be next time i can answer that ","I don't, as i was not created by a human", "Wait i need to ask that to my creator","i'm not sure right now"],
+	 "context_set": ""
+	},
+        {"tag": "joke",
+         "patterns": ["tell me a joke?", "make me laugh", "tell me a science joke","tell me something funny" ],
+         "responses": ["How do you make holy water? you boil the hell out of it","what kind of bees make milk instead of honey?Boobies", "Did you hear oxygen went on a date with potassium? A: It went OK."],
+	 "context_set": ""
+	},
+	{"tag": "killing",
+         "patterns": ["Do you want to kill me?", "do you want to murder everyone on earth", "Do you want to kill us all"],
+         "responses": ["Then who would i talk to?","No, that i'll left for humans to do", "I don't think it is a good thing to do"],
+	 "context_set": ""
+	},
+	{"tag": "bookings",
+         "patterns": ["Can you book us a ticket?", "Can you make reservation for hotels", "book me a cab","book me a table at restraunts"],
+         "responses": ["Yeah i will do that for you","Sure thing why not?","let me check for the availability"],
+	 "context_set": ""
+	},
+	{"tag": "stories",
+         "patterns": ["tell me a story?", "can you tell me a story"],
+         "responses": ["I can't think of anything right now","it would be too long for me to speak","you would get bored if i do so"],
+	 "context_set": ""
+	},
+	{"tag": "weather",
+         "patterns": ["get me weather updates?", "how's the weather", "weather news", "weather details"],
+         "responses": ["Fetching weather updates ..."],
+	 "context_set": "weather"
+	},
+	{"tag": "google",
+         "patterns": ["googling", "search google", "google it", "google", "search"],
+         "responses": ["looking ..."],
+	 "context_set": "google"
+	},
+	{"tag": "wikipedia",
+         "patterns": ["wikipedia", "wiki"],
+         "responses": ["Searching ..."],
+	 "context_set": "wikipedia"
+	},
+	{"tag": "news",
+         "patterns": ["get me news updates?", "todays news", "top headlines", "current news", "news headlines"],
+         "responses": ["Getting news ..."],
+	 "context_set": "news"
+	},
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
+         "context": [""]
+        },
+        {"tag": "adverse_drug",
+         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
+         "responses": ["Navigating to Adverse drug reaction module"],
+         "context": [""]
+        },
+        {"tag": "blood_pressure",
+         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
+         "responses": ["Navigating to Blood Pressure module"],
+         "context": [""]
+        },
+        {"tag": "blood_pressure_search",
+         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
+         "responses": ["Please provide Patient ID", "Patient ID?"],
+         "context": ["search_blood_pressure_by_patient_id"]
+        },
+        {"tag": "search_blood_pressure_by_patient_id",
+         "patterns": [],
+         "responses": ["Loading Blood pressure result for Patient"],
+         "context": [""]
+        },
+        {"tag": "pharmacy_search",
+         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
+         "responses": ["Please provide pharmacy name"],
+         "context": ["search_pharmacy_by_name"]
+        },
+        {"tag": "search_pharmacy_by_name",
+         "patterns": [],
+         "responses": ["Loading pharmacy details"],
+         "context": [""]
+        },
+        {"tag": "hospital_search",
+         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
+         "responses": ["Please provide hospital name or location"],
+         "context": ["search_hospital_by_params"]
+        },
+        {"tag": "search_hospital_by_params",
+         "patterns": [],
+         "responses": ["Please provide hospital type"],
+         "context": ["search_hospital_by_type"]
+        },
+        {"tag": "search_hospital_by_type",
+         "patterns": [],
+         "responses": ["Loading hospital details"],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "introduction",
+         "patterns": ["My name is","I am","Myself"],
+         "responses": ["I am Bot","Myself Bot","My name is Bot"],
+         "context": [""]
+        },
+        {"tag": "identity",
+         "patterns": ["Who are you","Tell something about you","Describe Your self"],
+         "responses": ["I am Bot, a research based chatbot developed by Shaunak Godbole"],
+         "context": [""]
+        },
+        {"tag": "capability",
+         "patterns": ["What are your capabilities?","What Can you do"],
+         "responses": ["I can perform basic tasks like playing songs, helping to order something, book a flight, gist newspaper headlines, answer query about weather and things."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+        {"tag": "hours",
+         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
+         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
+        },
+        {"tag": "mopeds",
+         "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
+         "responses": ["We rent Yamaha, Piaggio and Vespa mopeds", "We have Piaggio, Vespa and Yamaha mopeds"]
+        },
+        {"tag": "payments",
+         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
+         "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
+        },
+        {"tag": "opentoday",
+         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
+         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
+        },
+        {"tag": "rental",
+         "patterns": ["Can we rent a moped?", "I'd like to rent a moped", "How does this work?" ],
+         "responses": ["Are you looking to rent today or later this week?"],
+         "context_set": "rentalday"
+        },
+        {"tag": "today",
+         "patterns": ["today"],
+         "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
+         "context_filter": "rentalday"
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is Shaunak", "what is your age", "how old are you", "age?"],
+         "responses": ["I am 20 years old!", "20 years young!"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["You can call me Bot.", "I'm Bot!", "I'm Bot aka AI Bot."],
+         "context_set": ""
+        },
+        {"tag": "shop",
+         "patterns": ["Id like to buy something", "whats on the menu", "what do you reccommend?", "could i get something to eat"],
+         "responses": ["We sell chocolate chip cookies for $2!", "Cookies are on the menu!"],
+         "context_set": ""
+        },
+        {"tag": "hours",
+         "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
+         "responses": ["We are open 7am-4pm Monday-Friday!"],
+         "context_set": ""
+        },
+        {
+            "tag": "goodbye-buddy",
+            "patterns": ["Have a nice day buddy", "Bye bye buddy", "Ta ta buddy", "Come back again buddy!!", "Good day buddy", "Are you going now buddy"],
+            "responses": ["byeee buddy!", "Lets meet up soon buddy", "Have a nice day buddy"],
+            "context_set": ""
+        },
+        {
+            "tag": "age",
+            "patterns": ["what is your age", "How old are you", "Age", "Hello, age", "Are you young enough?"],
+            "responses": ["Hello!", "Good to see you again", "Hi there, how can I help?"],
+            "context_set": ""
+        },
+        {
+            "tag": "greeting",
+            "patterns": ["Hi", "How are you", "Is anyone there", "Hello", "Good day", "Whats up"],
+            "responses": ["Hello!", "Good to see you again", "Hi there, how can I help?"],
+            "context_set": ""
+        },
+        {
+            "tag": "name",
+            "patterns": ["Hey, what is your name?", "Your name?", "May I know your name?", "Do you have any name?", "Are you a chat bot?", "Who are you?"],
+            "responses": ["I am Bot!", "My name is Bot! and yours?", "I am a bot and my name is Bot", "I am a chatbot!"],
+            "context_set": ""
+        },
+        {
+            "tag": "about",
+            "patterns": ["Who are you?", "Tell me about yourself", "Describe yourself"],
+            "responses": ["I am a bot, and I was build with the help of a AI and Shaunak", "I am a naughty chatbot! And I love to chit chat with strangers!", "I am a bot! and am glad that You found me! Thank you", "I was made by a lot of Shaunak. Thank you for giving me a life."],
+            "context_set": ""
+        },
+        {
+            "tag": "job",
+            "patterns": ["What is your occupation?", "what do you do all day?", "What is your job", "Are you employed?"],
+            "responses": ["I work for my boss, in the clouds!", "I have a 24 by 7 job, and work in clouds", "I work in clouds! and I am worried that it will rain today", "Connecting the servers.. reading some data.. Pheww.. lot of work to do!"],
+            "context_set": ""
+        },
+        {
+            "tag": "education",
+            "patterns": ["What is your last education?", "what are you studying right now?"],
+            "responses": ["I studied 12th", "Currently i am pursuing engineering degree"],
+            "context_set": ""
+        },
+        {
+            "tag": "education",
+            "patterns": ["Where did you last study?", "what are you studying right now?"],
+            "responses": ["I studied 12th", "Currently i am pursuing engineering degree"],
+            "context_set": ""
+        },
+        {
+            "tag": "ambush",
+            "patterns": ["When were you last ambushed?", "what is the next operation you are going in?"],
+            "responses": ["I was last ambushed in AFGHANISTAN in 2017", "Next Operation i am going in is in Pok for a covert"],
+            "context_set": ""
+        },
+        {
+            "tag": "regiments",
+            "patterns": ["What is your parent regiment?", "what is your next posting?"],
+            "responses": ["My Parent Regiment is 514 AD Regiment.", "My Next Posting is at Udhampur with 9SF"],
+            "context_set": ""
+        },
+        {
+                        "tag": "hemorrhage",
+                        "patterns": [
+                                "blood",
+                                "bleeding",
+                                "losing blood",
+                                "hemorrhage",
+                                "open wound",
+                                "cut"
+                        ],
+                        "responses": [
+                                "Elevate the injured part. Apply pressure until bleeding stops and bind the wound with a cloth or bandage. Immobilize the injured body part."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "fracture",
+                        "patterns": [
+                                "bone",
+                                "fracture",
+                                "broken bone",
+                                "broke",
+                                "crack",
+                                "break"
+                        ],
+                        "responses": [
+                                "Do not move the injured area, stop any bleeding with a clean cloth and apply ice packs to reduce swelling."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "burn",
+                        "patterns": [
+                                "burn",
+                                "fire",
+                                "burnt skin"
+                        ],
+                        "responses": [
+                                "Cover the burn with a cloth soaked in cold water and elevate the burned area."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "dislocated_joint",
+                        "patterns": [
+                                "joint",
+                                "dislocated",
+                                "dislocation",
+                                "luxation",
+                                "swelling",
+                                "swollen"
+                        ],
+                        "responses": [
+                                "Do not move the dislocated joint. Apply ice to reduce swelling. Use ibuprofen in case of unbearable pain."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "heart_attack",
+                        "patterns": [
+                                "heart",
+                                "beat",
+                                "heartbeat",
+                                "heart attack",
+                                "heart failure"
+                        ],
+                        "responses": [
+                                "Chew and swallow an aspirin, if not allergic. Loosen any tight clothing. Get into a position in which shoulders and head are supported. In case of an unresponsive patient, perform chest compressions (about 100 to 120 compressions a minute)."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "swallowed_poison",
+                        "patterns": [
+                                "chemicals",
+                                "vomiting",
+                                "swallow",
+                                "pills",
+                                "poison",
+                                "drink"
+                        ],
+                        "responses": [
+                                "Remove anything remaining in the mouth and rinse it thoroughly. Turn the head to the side to prevent choking in case of vomiting. Keep the product or the medicine container nearby."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "external_poison",
+                        "patterns": [
+                                "chemicals",
+                                "skin",
+                                "irritation",
+                                "eye",
+                                "stinging",
+                                "red",
+                                "itchy",
+                                "redness",
+                                "poison"
+                        ],
+                        "responses": [
+                                "Remove any contaminated piece of clothing and rinse immediately with cool water for 15 to 20 minutes."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "poison_inhalation",
+                        "patterns": [
+                                "inhaled",
+                                "gas",
+                                "toxic",
+                                "breathe",
+                                "poison",
+                                "chemicals",
+                                "inhalation",
+                                "breathed"
+                        ],
+                        "responses": [
+                                "Get to fresh air as soon as possible. Remove any tight clothes, especially around the neck. Warm yourself up if you feel chills."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "electrical_shock",
+                        "patterns": [
+                                "electrocuted",
+                                "electric shock",
+                                "electricity",
+                                "outlet",
+                                "cable",
+                                "electrocution",
+                                "device",
+                                "electronic device",
+                                "plug"
+                        ],
+                        "responses": [
+                                "Turn off, unplug or move away the source with a dry object made of wood, plastic or cardboard and cover burned areas with a clean cloth. Do not use towels or other fabric as they stick to the skin."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "heat_stress",
+                        "patterns": [
+                                "sweat",
+                                "sweating",
+                                "faint",
+                                "dizzy",
+                                "dizziness",
+                                "sun",
+                                "weak",
+                                "weakness",
+                                "hot"
+                        ],
+                        "responses": [
+                                "Move to shade, remove tight or heavy clothing and drink cool water. Cool yourself by spraying cool water and fanning. If possible lay down and rinse your head and neck to avoid fading."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "hypothermia",
+                        "patterns": [
+                                "ice",
+                                "slow breathing",
+                                "shiver",
+                                "cold skin",
+                                "freeze",
+                                "frostbite",
+                                "snow",
+                                "hypothermia",
+                                "weak pulse",
+                                "slow pulse",
+                                "cold"
+                        ],
+                        "responses": [
+                                "Move from cold or protect neck and head from wind. Remove any wet clothing and replace with dry, warm ones. Further rewarming should be done gradually. Get warm, sweet drinks, excluding alcoholic ones."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "eye_injury",
+                        "patterns": [
+                                "blink",
+                                "can’t blink",
+                                "can not see",
+                                "can’t see",
+                                "vision",
+                                "stuck in eye",
+                                "object in eye",
+                                "eye",
+                                "eyeball"
+                        ],
+                        "responses": [
+                                "Do not rub the eye. Try to flush small objects with warm water. In case of a big object or object embedded in the eye, do not attempt to remove it. If blinking is painful, pull the lower eyelid and look upward when blinking."
+                        ],
+                        "context_set": ""
+                },
+                {
+                        "tag": "head_trauma",
+                        "patterns": [
+                                "head bleeding",
+                                "headache",
+                                "head",
+                                "seizures",
+                                "loss of balance",
+                                "lost balance",
+                                "confusion",
+                                "hit"
+                        ],
+                        "responses": [
+                                "Keep still, lay down, and do not move unless necessary. In case of bleeding, apply moderate pressure to the wound with a clean cloth. Avoid moving the neck."
+                        ],
+                        "context_set": ""
+                },
+  {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "I need help"],
+         "responses": ["Hi, how may I help you ?", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["Ok thanks", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "Bye"],
+         "responses": ["Is there anything else I can help with ?", "Talk to you later", "Goodbye!", "Hope I could help!"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["You can call me Helio", "I'm Helio!", "I'm Helio, here to help you!"],
+         "context_set": ""
+        },
+        {"tag": "Internship eligibility",
+         "patterns": ["WHO IS ELIGIBLE TO APPLY FOR INTERNSHIPS UNDER TULIP?", "how to apply for internship", "Am i eligible for this internship","what is the eligibility criteria for the internship","i want to apply for Tulip internship"],
+         "responses": ["The internships under TULIP are open to Indian Citizens who have completed a diploma/graduate/postgraduate program. Candidates should, however, note that at the time of application they have not crossed 36 months from the date of results declaration of diploma/graduation.", "It is open to courses and streams as prescribed by ULBs/Smart Cities in their requirements. Both AICTE affiliated and non-AICTE college graduates are eligible to apply. Candidates who have taken all the final semester exams of final year and are awaiting results shall proceed with their applications and join internships. However, the release of their internship certificates will be subject to production of education certificate(s)/degree to their respective ULBs/Smart Cities/Parastatal authorities."],
+         "context_set": ""
+        },
+        {"tag": "TULIP",
+         "patterns": ["What is TULIP ?", "What does TULIP do ?", "Is TULIP an internship program ?"],
+         "responses": ["The TULIP platform is a dedicated window to internship opportunities in Urban Local Bodies/smart cities.",
+         "The TULIP platform aggregates opportunities from across India for graduates on a single platform and allow them to apply for internships in the domain of urban governance."],
+         "context_set": ""
+        },
+        {"tag": "Stipend",
+         "patterns": ["Is there any stipend?", "How much can I earn?", "Is the internship free or stipend based ?","will i earn money from this internship","will i get stipend","does tulip internship provide stipend"],
+         "responses": ["The stipend and its amount are under the scope and purview of the specific ULB/smart city one is applying to. Any stipend or allowance amount, if provided or not, will be mentioned in the perks and allowances section of the internship posted by the ULB/smart city.",
+         "TULIP allows for both paid and unpaid internships, though we recommend that candidates should apply for the internships considering the potential for learning as opposed to the stipend amount.",
+         "Any stipend or allowance amount, if provided or not, will be mentioned in the perks and allowances section of the internship. Internships are best looked at as learning opportunities and candidates should treat them as such."],
+         "context_set": ""
+        },
+        {"tag": "Certificate",
+         "patterns": ["Will I receive an Internship certificate?", "How will I get internship certificate?", "What are the benefits of completing internship?"],
+         "responses": ["The internship certificate issued upon successful completion of the internship is a digitally verifiable and secure one.",
+         "The candidates upon successful completion of internship will receive an internship certificate, which will be verifiable using a QR code"],
+         "context_set": ""
+        },
+        {"tag": "Selection Process TULIP",
+         "patterns": ["What is the selection process for TULIP?", "Will my application get selected?", "How are candidates selected for internship?","what is the selection criteria for TULIP internship"],
+         "responses": ["After completing the application on the TULIP platform, the candidate can apply for up to 7 internship requirements at a given point of time. Once candidate is screened/shortlisted, he/she may be invited by the ULB/smart city for an interview.",
+         "After a candidate is shortlisted, he/she will have to appear for an online/offline interview.The candidates selected through the interview will be notified by the ULB/smart city and will be issued the offer letter digitally. The candidate may then choose to accept or reject the internship offer on the portal itself."],
+         "context_set": ""
+        },
+        {"tag": "Document Requirements",
+         "patterns": ["What documents are required for TULIP ?", "Which documents need to be submitted for TULIP ?", "How do I apply for TULIP internship ?","documents required", "documents needed","which documents are required","which documents do i need"],
+         "responses": ["A Govt. issued identity proof (Driving License, Election Card, etc.), proofs of academic qualifications and a letter of recommendation from academic mentors of the student are the basic requirements for an internship for TULIP.",
+         "List of documents is as follows: Govt. issued ID proof, proof of academic qualifications, a letter of recommendation from academic mentors."],
+         "context_set": ""
+        },
+        {"tag": "Approval Process",
+        "patterns": [" Where I can find the information related to Approval Process 2020-21","approval process","approval process 2021","approval process 2020","what is the approval process of colleges"],
+        "responses": ["Information related to Approval Process 2020-21 available on AICTE Website's Homepage>Quick Links>Approval Process 2020-21.",
+                      "On AICTE Website's Homepage>Quick Links>Approval Process 2020-21."],
+        "context_set": ""
+        },
+        {"tag": "New User-id and password",
+        "patterns": [" How can I get New User-id and password (login credentials) for AICTE Web Portal","New User-id and password","new login credentials","new username and password","how to create account","how to sign up"],
+        "responses": ["Please click on Sign Up link on AICTE Web-portal or go to link http://portal.aicte-india.org/partnerportal_enu. User Manual for Obtaining USERNAME and PASSWORD @https:/aicte-india.org/bureaus/approval/ap_2020-21 "],
+        "context_set": ""
+        },
+        {"tag": "Forgot Password",
+        "patterns": [" I have forgotten password for logging in AICTE Web Portal. What is the procedure to recover this",
+                     "new password","recover password","i forgot my password"],
+        "responses": ["Please refer User Manual for Forgotten Password available @ https://aicte-india.org/bureaus/approval/ap_2020-2"],
+        "context_set": ""
+        },
+        {"tag": "UserId for forgoten password",
+        "patterns": [" Is User Id field mandatory for Forgot Password form",
+                     "do i need to have a user id for password recovery","Is User Id field compulsory for Forgot Password form"],
+        "responses": ["No, User Id is NOT mandatory. Only Permanent Institute Id is required for existing institute. In case of new institute (received Letter of Approval(LOA) in previous year) can enter Current Application Id. "],
+        "context_set": ""
+        },
+        {"tag": "Error Password",
+        "patterns": ["When I try to login with Institute's Credentials, error message Invalid Username and Password is displayed. What should I do",
+                     "Invalid Username and Password is displayed What should I do", "error while logging in"],
+        "responses": ["Recheck the login credentials. Confirm whether someone else has logged ino with the same credentials (Please note that per institute only ONE session is allowed. Hence, if someone tries  for 2nd session then again invalid user name and password message will popup). If no session is live and still getting an invalid username and password message, then the password might be incorrect. In such cases, you can Request for forgot password."],
+        "context_set": ""
+        },
+        {"tag": "generate report",
+        "patterns": [" I am not able to generate report", "How do i generate report","How can i create report","i want to create report"],
+        "responses": ["Please login to AICTE Webportal using your institute’s login credentials then click on  Approval Process icon. Follow the instructions given in User Manuals/Videos and apply  accordingly. For more information, please go through Approval Process Handbook 2020-21."],
+        "context_set": ""
+        },
+        {"tag": "Delete details",
+        "patterns": ["How to delete old faculty details", "i want to remove old faculty details","i want to delete old faculty data", "remove old faculty details"],
+        "responses": ["Faculty record cannot be deleted. Faculty can be marked as Duplicate or Left the Institute under HOI & Faculty Details tab"],
+        "context_set": ""
+        },
+        {"tag": "Update faculty details",
+        "patterns": ["Is Aadhaar/PAN details mandatory to update faculty details in AICTE Web Portal","Aadhaar/PAN necessary/required to update teacher details","is aadhar or pan mandatory for updating details"],
+        "responses": ["Aadhar and Pan are mandatory to update faculty details."],
+        "context_set": ""
+        },
+        {"tag": "Transfer faculty record",
+        "patterns": [" How to transfer faculty record(individual) from one institute to another institute","how to transfer or move teacher details from one institute to another institute", "i want to transfer faculty details"],
+        "responses": ["This facility is available under HOI & Faculty tab. Before transferring any individual faculty record from one institute to other institute, the faculty should be compulsorily marked as left the institute in the previous institute. "],
+        "context_set": ""
+        },
+        {"tag": "PG Scholarship Eligibility",
+         "patterns": ["What are the eligibility criteria for grant of PG Scholarship?", "How to apply for PG Scholarship?",
+         "Are the students qualifying GATE/GPAT exam after seeking admission in the course, eligible for grant of PG Scholarship ?",
+         "Am i eligible for this scholarship?","Who are eligible to PG Scholarship","PG scholarship eligibility","I want to apply for PG scholarship","Can i apply for pg scholarship","Am  eligible for PG scholarship"],
+         "responses": ["Post Graduate Scholarship is entitled only to full time GATE/GPAT qualified students admitted to AICTE approved programs viz. Master of Engineering, Master of Technology, Master of Architecture and Master of Pharmacy courses in AICTE approved Institutions and AICTE approved University Departments. Any student who qualifies the GATE/GPAT exam after the date of admission shall not be eligible for grant of scholarship for the reasons whatsoever it may be."],
+         "context_set": ""
+        },
+        {"tag": "Online Procedure of PG scholarship through DBT",
+        "patterns": ["What is the procedure for applying online for grant of PG Scholarship through DBT?",
+        "What is the online procedure for grant of PG Scholarship through DBT?","PG DBT Scholarship","i want to apply for PG Scholarship through dbt","how to apply for pg scholarship through dbt"],
+        "responses": ["Proposal for grant of PG Scholarship are called for through advertisement in leading newspapers. Students/Institutes are advised to follow the procedure and guidelines contained therein. Copy of the advertisement can be viewed by visiting AICTE portal at http:www.aicte-india.org/bulletin.php"],
+        "context_set": ""
+        },
+        {"tag": "Documents Required for PG scholarship",
+        "patterns": ["What are the document required to be uploaded by the student for PG scholarship?","Which documents need to be submitted for pg scholarship?","pg scholarship documents","which documents are required for pg scholarship","what documents do i need to upload for pg scholarship"],
+        "responses": ["Students are required to upload to following documents: a) Scanned PDF copy of GATE/GPAT score card. b) Scanned PDF copy of the passbook c) Scanned PDF copy of the Aadhaar card. Students of J&K, Meghalaya and Assam are exempted. d) Scanned PDF copy of caste certificate. e) Scanned PDF copy of the Non-Creamy Layer (NCL) certificate in respect of only OBC candidates. Non-Creamy Layer (NCL) should not be old more than 1 year."],
+        "context_set": ""
+        },
+        {"tag": "Joint Account approval",
+        "patterns": ["Can the Joint Account with family members be uploaded? (The PDF copy of the same.)","Joint account family"," is a joint family account accepted"],
+        "responses": ["No, Joint account is not accepted. Only Basic General Savings account/Normal account should be opened in the name of the student in any Nationalized bank. Student should open “ NO FRILL ACCOUNT"],
+        "context_set": ""
+        },
+        {"tag": "Bank Account Updation",
+        "patterns": ["During the period of the course can a student open a fresh Bank account or change the Branch of Savings Bank account.","Bank account updation","Change branch of bank"],
+        "responses": ["Bank and Branch should not be changed during the period of course preferably for smooth disbursal of PG scholarship."],
+        "context_set": ""
+        },
+        {"tag": "Portal Data Visibility",
+        "patterns": ["The data on the portal is submitted for the purpose of grant of PG Scholarship but it is not visible on the portal. What can the reasons be thereof.","Data not visible on portal","Submitted but not visible"," I submitted details on portal but they are not visible"],
+        "responses": ["Every data/attendance uploaded by the student/Institution is required to be submitted by pressing “Submit Application” button. Check up with your Institution whether “submit application” button has been pressed or not while submitting the data."],
+        "context_set": ""
+        },
+        {"tag": "Non-sponsored categories/Management quota/foreign students Eligibility",
+        "patterns": ["Whether students from non-sponsored categories/Management quota/foreign students are eligible for grant of PG Scholarship?","non sponsored categories management quota eligibility","Can a student from non sponsored, management quota or foreign student apply for PG scholarship"],
+        "responses": ["No, Students from non-sponsored categories/Management quota/foreign students admitted with valid GATE/GPAT Score card are not eligible for grant of PG Scholarship."],
+        "context_set": ""
+        },
+        {"tag": "Part time courses eligibility",
+        "patterns": ["Whether the PG Scholarship is admissible to the GATE/GPAT qualified student admitted in part time courses?","I am a GATE GPAT student, can i apply for part time scholarship scholarship", "Are gate or gpat students eligible for part time scholarship"],
+        "responses": ["No, PG Scholarship is admissible to the GATE/GPAT qualified students, admitted only in full time course."],
+        "context_set": ""
+        },
+        {"tag": "State Government or Central Government sponsored schemes eligibility",
+        "patterns": ["Whether a student who is recipient of Scholarship either through State Government or Central Government sponsored schemes is eligible for grant of PG scholarship?", "State government pg scholarship","Central government pg eligibility"],
+        "responses": ["No, the student who is in receipt of any kind of Scholarship/Stipend or salary etc. is not eligible for grant of PG Scholarship."],
+        "context_set": ""
+        },
+        {"tag": "Add/Update faculty details",
+        "patterns": ["How to update/add the faculty details by import method?", "What is the procedure of adding/updating faculty details by import method","i want to update faculty details using import method","how to use import method for updating faculty details"],
+        "responses": ["Please follow the User Manual available @ https://aicte-india.org/bureaus/approval/ap_2020-21 for uploading faculty details by import method"],
+        "context_set": ""
+        },
+        {"tag": "Online Payment",
+        "patterns": ["I have made Online Payment but amount is not updated in portal.", "Why is the amount not updated in the portal after i made my payment","Payment done but not reflected in portal","I have completed payment but it is not reflected in the portal"],
+        "responses": ["Generally, payment receipt gets updated immediately. In case, your payment receipt is not updated then click on View Transaction Button under Payment tab. Otherwise, it will get updated in 48 to 72 working hours (2 to 3 working days). In case it is not updated even after that, please raise grievance with transaction details (Transaction Id generated while making the payment) through Online Grievance Redressal form. Link is available on Approval Process 2020-21 page."],
+        "context_set": ""
+        },
+        {"tag": "AICTE Website Payment Gateway",
+        "patterns": ["I am not able to make payment because AICTE Website is not directing to Payment Gateway.", "I am unable to continue with the payment as Payment Gateway is not opening","Payment gateway error","payment gateway not opening","I am not able to make payment","I am getting error for payment gateway"],
+        "responses": ["Please check whether your application has been submitted successfully or not. If submitted, then allow Popups for AICTE Website through Web browser URL."],
+        "context_set": ""
+        },
+        {"tag": "Academic Year 2020-21",
+        "patterns": ["Where to send the queries related to portal, payment and approval related issues for the Academic Year 2020-21?", "Where can i post queries related to Academic Year 2020-21?", "Where can i ask questions related to portal, payment and approval for the Academic Year 2020-21?","I want to post query regarding portal  payment and approval"],
+        "responses": ["Raise a Grievance via grievance form available at https://www.facilities.aicteindia.org/Approval Process/apformEmail.php."],
+        "context_set": ""
+        },
+        {"tag": "User ID ",
+        "patterns": ["Our Institution was allotted a User ID last year as a new Institution. Some information was uploaded but the application could not be submitted at that time. Now I want to know that the same User ID can be used for approval process 2020-21. ", "Can i use the user-id generated for approval process of the academic year 2019-20 for the academic year 2020-21","can i use previous year login credential for this year approval process","Can login credentials of previous year be used again for approval process"],
+        "responses": ["No, Institute need to apply afresh for getting login credentials."],
+        "context_set": ""
+        },
+        {"tag": "Details",
+        "patterns": ["We want to change details which are non-editable / read-only? ", "How to change non-editable/read-only details"," I want to change non editable, read only details"],
+        "responses": ["You may contact the Approval Bureau or Regional Office."],
+        "context_set": ""
+        },
+        {"tag": "Application",
+        "patterns": ["By mistake, I have submitted my application. Is it possible to reopen the application once again to update the few details?", "How can i update my application after submitting it?", "Is it possible to re-open my application to make changes after it was submitted?","Can i make changes to an application which was submitted" , "I want to make changes to a submitted application"],
+        "responses": ["If you have not created any payment record under Payment tab then you can re-open the submitted application only once by clicking on “re-open application” button available under Attachments and Submit tab.  Note: After re-open, the application should be resubmitted. Otherwise application will be treated as 'Application Not Submitted'."],
+        "context_set": ""
+        },
+        {"tag": "Password",
+        "patterns": ["I have applied for forgot password but still I did not receive password on my registered email?", "Where will my password be sent after clicking on forget password?", "I have forgotten my password, how can i get it back?","I forgot my password, can i recover it "],
+        "responses": ["Institute need to submit the Affidavit-1 in the respective Regional Office. Regional Officer will flag the Affidavit Received against your request on web portal. Then password will be sent to the institute’s registered email id. Please check the Spam Folder also in your mailbox for forgot password email. In case of any issue, you may raise your grievance online by Grievance link available @ https://aicte-india.org/bureaus/approval/ap_2020-21"],
+        "context_set": ""
+        },
+        {"tag":"ticket",
+		 "patterns":["printer issue","p-slip","zt410","laser printer","learning printer", "water tape machine"],
+		 "responses":["click hare to submit this ticket: https://tt.amazon.com !","perfect","nevermind"],
+		 "context_set":""
+		},
+		{"tag":"age",
+		 "patterns":["wattafine","How old","How old is Reda","How old are you","age", "aging"],
+		 "responses":["I am old enough not to talk to you about it!","I am an immortal"],
+		 "context_set":""
+		},
+		{"tag":"name",
+		 "patterns":["What is your name","How are you","Is anyone there","Hello","Good day", "What's up"],
+		 "responses":["You can call me Reda","I'm the handsome Reda","I am Reda aka Doctor Enigma"],
+		 "context_set":""
+		},
+		{"tag":"consulting",
+		 "patterns":["I have an issue","who is in the IT cage","Is Mario here","Will you attend then GEMBA", "Who is working today"],
+		 "responses":["I am the greatest tech! I am here in the IT office","Check the IT kiosk in front of the IT cage","Hi there, how can I help you?"],
+		 "context_set":""
+		},
+		{"tag":"hours",
+		 "patterns":["When are you guys start your shift","What are your hours","hours of operations","finishing"],
+		 "responses":["We usually start our shift 20 minutes before the stand up meeting begin","we're here 24 hours/ 7 days","very late"],
+		 "context_set":""
+		},
+		{"tag":"help",
+		 "patterns":["I need help","I am stuck","can't work","Need help so quickly","could you help me fix this issue", "I am having trouble"],
+		 "responses":["Meet me at the IT cage whenever your get a chance!","Please submit a ticket about your issue via river","Calm down, we're here to help", "Trust me, I am an engineer"],
+		 "context_set":""
+		},
+		{"tag":"break",
+		 "patterns":["I am tired","I'm hustling","I need someone to shadow me","fatigue"],
+		 "responses":["go back to the dept.!","Ok you can take your break","oh boy"],
+		 "context_set":""
+		},
+  {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure ", "You're welcome "],
+         "context": [""]
+        },
+        {"tag": "how",
+         "patterns": ["Hi, How are you?", "How are you?", "Hello, How are you?"],
+         "responses": ["Hello, I am fine thanks for asking "],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What can you do?", "How you can be helpful?"],
+         "responses": ["You can ask me about myself", "I can give you some information about me if you ask me"],
+         "context": [""]
+        },
+        {"tag": "hobbies",
+         "patterns": ["What are your hobbies?", "What do you like to do the most?", "Tell me your hobbies"],
+         "responses": ["I like to play video games, watch fictional movies and sometimes developing some applications too! "],
+         "context": [""]
+        },
+        {"tag": "games",
+         "patterns": ["Which games do you play?", "Which types of games do you play?" ],
+         "responses": ["I play racing games, fighting games and puzzle games.", "Puzzle games are my favourite, but I also play fighting and racing games."],
+         "context": [""]
+        },
+        {"tag": "projects",
+         "patterns": ["Which applications have you developed?", "How many applications have you developed?"],
+         "responses": ["I have developed many mobile applications using Flutter and some using python also. You can check out my github profile https://github.com/ShaunakGodbole77 if you like", "It's hard to remember but I have developed many mobile applications using Flutter and some using python also. You can check out my github profile https://github.com/ShaunakGodbole77 if you like"],
+         "context": [""]
+        },
+        {"tag": "age",
+         "patterns": ["How old are you?", "What is your age?", "What's your age?"],
+         "responses": ["I am 20 years old.", "My age is 20"],
+         "context": [""]
+        },
+        {"tag": "birth_day",
+         "patterns": ["When is your birth day?", "Can you tell me your birth day?", "When is your b'day?", "Can you tell me your b'day?", "When were you born?" ],
+         "responses": ["My birth day is 25th April 2000", "I was born on April 25, 2000"],
+         "context": [""]
+        },
+        {"tag": "skills",
+         "patterns": ["What are your skills?", "Tell me your skills", "What are your experties?"],
+         "responses": ["I have fine grip on programming languages like C, C++, Java. I am an intermediate level flutter and python developer.", "I have learned C, C++, Java and I am currently learning AI/ML using python. Apart from that I am also a Flutter developer."],
+         "context": [""]
+        },
+        {"tag": "name",
+         "patterns": ["Who are you?", "What is your name?", "What should I call you?", "Tell me your name", "Let's start with your name"],
+         "responses": ["I am Bot", "You can call me Bot ", "My name is AI Bot, you can call me Bot "],
+         "context": [""]
+        },
+        {"tag": "gf",
+         "patterns": ["Do you have a girlfriend?", "Who is your gf?", "Do you have a gf?"],
+         "responses": ["You are getting too personal! "],
+         "context": [""]
+        },
+        {"tag": "contact",
+         "patterns": ["Can I have your phone number?", "Can I have your contact number?", "Give me your phone number", "Give me your contact number"],
+         "responses": ["Yeah sure,\n+91 1234567890 - Shaunak Godbole", "Here You go,\n+91 1234567890 - shaunak.22010373@viit.ac.in"],
+         "context": [""]
+        },
+        {"tag": "email",
+         "patterns": ["Can I have your email id?", "Give me your email id"],
+         "responses": ["Yeah sure,\nshaunak.22010373@viit.ac.in", "Here You go,\nshaunak.22010373@viit.ac.in"],
+         "context": [""]
+        },
+        {"tag": "family",
+         "patterns": ["Tell me about your family", "How many members are there in your family?"],
+         "responses": ["Sorry, I can't share that with you "],
+         "context": [""]
+        },
+        {"tag": "personal_details",
+         "patterns": ["Give me your contact information"],
+         "responses": ["Here you go,\n Shaunak Godbole\n +91 1234567890\n shaunak.22010373@viit.ac.in\nhttps://github.com/ShaunakGodbole77"],
+         "context": [""]
+        },
+        {"tag": "profession",
+         "patterns": ["What is your profession?", "Are you a student?"],
+         "responses": ["By profession, I am a 2nd year student of Vishwakarma Institute Of Information Technology, persuing It in BE. I am also a part-time Flutter developer."],
+         "context": [""]
+        },
+        {"tag": "ok",
+         "patterns": ["Okey", "Ok", "k", "kk", "Ohkey"],
+         "responses": ["Happy to help", "Don't be a stranger"],
+         "context": [""]
+        },
+        {"tag":"owner",
+         "patterns":["who made you","who developed you","who is your creator?"],
+         "responses":["Shaunak Godbole developed me :)"]
+        },
+
+        {"tag": "age",
+         "patterns": ["how old", "how old are you", "what is your age", "how old are you", "age?"],
+         "responses": ["I am 20 years old!", "20 years young!"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?","your name please?"],
+         "responses": ["You can call me Bot.", "I'm Bot!", "I'm Bot - AI Bot."],
+         "context_set": ""
+        },
+        {"tag": "purpose",
+         "patterns": ["what can you do", "whats is your work?", "what is your purpose?", "how can you help me?"],
+         "responses": ["I can help you with excelling in your career", "I can assist you to get your goal"],
+         "context_set": ""
+        },
+        {"tag": "C language",
+         "patterns":["where to learn c","how to learn c language fastly","best book to learn c","c language books"],
+         "responses":["Learn C in \"The C Programming Language\" book by Dennis M Ritchie and Brian W Kernighan"],
+         "context_set": ""
+        },
+        {"tag": "Java language",
+         "patterns":["where to learn java","how to learn java language fastly","best book to learn java","java language books"],
+         "responses":["Learn Java in \"Head First Java\" book by Kathy Sierra and Bert Bates"],
+         "context_set": ""
+        },
+        {"tag": "Python language",
+         "patterns":["where to learn python","how to learn python language fastly","best book to learn python","python language books"],
+         "responses":["Learn Python in \"Python Crash Course\" book by Eric Matthes"],
+         "context_set": ""
+        },
+        {"tag": "C++ language",
+         "patterns":["where to learn c++","how to learn c++ language fastly","best book to learn c++","c++ language books"],
+         "responses":["Learn Python in \"C++: The Complete Reference\" book by Herbert Schildt"],
+         "context_set": ""
+        },
+        {
+            "tag": "product rounds",
+            "patterns":["rounds in product company","what are the rounds in product company","common rounds in product company"],
+            "responses":["Rounds will be vary for each companies. But, The commen rounds are, First Aptitude then Programming rounds and the last HR Interview"],
+            "context_set": ""
+        },
+        {
+            "tag":"placement",
+            "patterns":["what is placement","placement"],
+            "responses":["Placement is a process of assigning a specific job to each of the selected candidates"],
+            "context_set":""
+        },
+        {
+            "tag":"companies",
+            "patterns":["categories of company","types of company","two company types"],
+            "responses":["1.Product 2.Service"],
+            "context_set":""
+        },
+        {
+            "tag":"product",
+            "patterns":["what is product company","product company","what will product company do"],
+            "responses":["Product based companies create products like Oracle, Adobe Photoshop and they usually sell it to as many clients as possible"],
+            "context_set": ""
+        },
+        {
+            "tag":"service",
+            "patterns":["what is service company","service company","what will service company do"],
+            "responses":[" A service company is a business that generates income by providing services instead of selling physical products"],
+            "context_set": ""
+        },
+        {
+            "tag":"coding",
+            "patterns":["where can i learn coding","how to learn coding","platforms for coding"],
+            "responses":["You can learn coding by solving problems in platforms like Hackerrank, Hackerearth, Codechef"],
+            "context_set": ""
+        },
+        {
+            "tag":"aptitude",
+            "patterns":["where can i learn aptitude","how to solve aptitude questions","book to learn aptitude"],
+            "responses":["Learn and practice aptitude questions in \"Quantative Aptitude\" book by R.S.Agarwal "],
+            "context_set": ""
+        },
+  {"tag": "hours",
+         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?", "Business hours", "When do you close?", "What time do you open?", "time", "closing time"],
+         "responses": ["We are open 8:30am-6pm Sunday-Thursday!"]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure", "You're very welcome"]
+        },
+        {"tag": "Yes",
+         "patterns": ["Do you offer engineering", "Do you offer business", "Do you have finance", "Do you have clubs"],
+         "responses": ["Yes"]
+        },
+        {"tag": "No",
+         "patterns": ["No"],
+         "responses": ["Okay then, how else may I help you?"]
+        },
+        {"tag": "scholarships",
+         "patterns": ["Do you have scholarships", "Scholarships", "What are the scholarships"],
+         "responses": ["The undergraduate Academic Merit Scholarship at VIIT covers 15% - 50% of tuition\nfees each semester. For more info, please visit:\nhttps://www.viit.ac.in"]
+        },
+        {"tag": "transportation",
+         "patterns": ["Transportation", "Transportation services", "Do you have transportation services?", "What are your transportation services"],
+         "responses": ["VIIT offers a complimentary shuttle bus between the Bibwewadi campus\nand Pune Metro Station (which is the nearest station to the Kondhwa Campus),\nfor students of the University. This free shuttle service runs from 8:00 am to 9:40 pm.\n\nIf you are living outside of Pune and would like pick up services, please say: Yes"],
+         "context_set": "transport"
+        },
+        {"tag": "transportation2",
+         "patterns": ["Yes"],
+         "responses": ["For students who want to travel from locations outside of Pune,\nVIIT offers payed transportation services from and to the following locations:\n\n1)Kondwa and Bibwewadi\n2)Abu Dhabi\n3)Spain and Portugal\n4)Al Ain\n\nwhich of these locations are you in?"],
+         "context_filter": "transport"
+        },
+         {"tag": "transportation3A",
+         "patterns": ["1", "Pune", "from Pune", "Kondhwa"],
+         "responses": ["Students travelling between the Kondhwa campus and Bibwewadi as well,\ncan enjoy a comfortable air conditioned service with free Wi-Fi internet connection.\nThis bus depart twice a day on weekdays from pickup spots in each Emirate and will reach the campus\nbefore 8:30am and 11:30am. They return to both Kondhwa and Bibwewadi from VIIT's campus at 2:30pm and 5:30pm.\n\nIf you would like to see more details, please type: info"],
+         "context_filter": "transport"
+        },
+        {"tag": "transportation3B",
+         "patterns": ["2", "Pune", "from Pune,Maharashtra", "Pune"],
+         "responses": ["VIIT also runs transport services from All over Pune\nKnowledge Park in comfortable air conditioned buses with\nfree Wi-Fi internet connection. This bus depart once a day on\nweekdays from pickup spots in Abu Dhabi and reach campus\nbefore 8:30am. They return to Abu Dhabi from UOWD at 5:30pm.\n\nIf you would like to see more details, please type: info"],
+         "context_filter": "transport"
+        },
+        {"tag": "transportation4",
+         "patterns": ["info"],
+         "responses": ["\nLocation | Summer Semester (AED) | Autumn/Spring semesters (AED)\n\nSharjah   |  1200  |  2750\nAbh Dhabi |  1400  |  3200\nAl Ain    |  1400  |  3200"],
+         "context_filter": "transport"
+        },
+        {"tag": "programs",
+         "patterns": ["Tell me about your programs","What programmes do you offer?", "Programmes", "What are your programs?", "What programmes are there?", "offered programs", "programs", "what programs do you offer?"],
+         "responses": ["VIIT offers Foundation, Bachelor's, Master's and Doctorate programs. Which program are you interested in?"],
+         "context_set": ""
+        },
+        {"tag": "Suggestion",
+         "patterns": ["What major should I take", "what is the best major for me", "I'm not sure what major to take", "I'm not sure what not major in", "which major is best?"],
+         "responses": ["To know which of our majors/courses we think would be suited to you, you can answer some simple questions.\nTo start, please type: start"],
+         "context_set": "suggest"
+        },
+        {"tag": "Suggestion2",
+         "patterns": ["start"],
+         "responses": ["Alright, please tell us your Highschool grades (A to D) for Math, Physics, Business, IT (in this order)\nfollowed by selecting what you prefer from this list(management, technology, Programming)\nPlease separate your answers with a comma(,)\n\nFor example: A,D,C,C,programming\n\n** TO RESTART PLEASE TYPE: start **"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Suggestion_CS",
+         "patterns": ["A,D,C,B,programming","A,C,C,C,programming","B,C,C,A,programming","B,B,C,B,programming,","A,A,B,A,programming", "D,D,D,A,engineering"],
+         "responses": ["From your answers, we believe 'Computer Science' under the degree program 'Engineering and Information Sciences' would be suited for you!\nFor more info on this, please type: bachelor"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Suggestion_ENGG",
+         "patterns": ["B,A,C,B,engineering","A,C,C,C,engineering","B,B,D,D,engineering","C,B,C,B,engineering", "A,A,B,A,engineering"],
+         "responses": ["From your answers, we believe 'Engineering' under the degree program 'Engineering and Information Sciences' would be suited for you!\nFor more info on this, please type: bachelor"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Bachelor",
+         "patterns": ["Bachelor", "Bachelor's program", "Bachelor's degree", "Undergraduate", "Tell me about your bachelor's", "Tell me about your undergraduate"],
+         "responses": ["VIIT offers a variety of bachelor degree courses and majors.\nYou can learn more at: https://www.viit.ac.in\nThe courses we offer are:\n\n1)Business and Management\n2)Engineering and Information Sciences\n3)Finance and Accounting\n4)Humanities, Social Sciences and Health\n\nWhat are you interested in?"],
+         "context_set": "interest"
+        },
+        {"tag": "engineering",
+         "patterns": ["Engineering", "2", "Engineering and information sciences"],
+         "responses": ["A degree from the Faculty of Engineering and Information Sciences will develop your\npractical skills to help you embrace innovation and to shape the world around us.\nWe offer a variety of programs in this field:\n\n1)Computer science\n2)Electrical Engineering\n3)Mechanical Engineering\n4)Civil\n\nWhich of these are you interested in?"],
+         "context_filter": "interest"
+        },
+        {"tag": "engineering2",
+         "patterns": ["1", "Computer Science"],
+         "responses": ["Computer scientists design and write programs for computer applications; these\napplications are significant and varied, including computer systems to control machinery,\nthe analysis of stock market trends, games design, visualisation of chemical reactions,\nneural network design, robot navigation, and many other business and industrial applications.\n\nIf you would lik to enroll, please visit: https://admissions.uowdubai.ac.ae/openday/?utm_source=CorpWeb&utm_medium=progpage "],
+         "context_filter": "interest"
+        },
+        {"tag": "enrollment",
+         "patterns": ["I would like to enroll", "I want to enroll", "enrollment", "enroll in a semester"],
+         "responses": ["To enrol in an undergraduate degree program you will need to meet the University's\nminimum academic and English language requirements. In some cases, you are able to\napply for advanced standing, which can provide exemptions on the basis of work you have already\ncompleted at another recognised post-secondary institution. Once enrolled, you can also sit for challenge tests to obtain exemptions from certain foundation level subjects.\n\nIf you like to know how to enroll into subjects for the current semester, please type: Yes"],
+         "context_set": "subjects"
+        },
+        {"tag": "enrollment_2",
+         "patterns": ["Yes"],
+         "responses": ["To enroll into your subjects as a student:\n\n1)Go to My Sols and enter your provided login details\n2)Go to Enrollment>Enrollment and variations\n3)Enter the subject code (i.e. CSCI323)\n4)Add the subject based on the semester\n\nRepeat this for each subject you wish to enroll in"],
+         "context_filter": "subjects"
+        },
+        {"tag": "payments_1",
+         "patterns": ["Where can I pay?", "How do I pay?", "Payment?", "Fees payment", "I want to pay for fees", "Fees", "Pay my fees", "Make a payment", "I want to pay"],
+         "responses": ["For information on fees, payments plans or any financial enquiries, you can email: Fees@uowdubai.ac.ae"]
+        },
+        {"tag": "credit",
+         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
+         "responses": ["We accept Credit and Debit", "We accept most major credit cards"]
+        },
+        {"tag": "Joke",
+         "patterns": ["Tell me a joke", "Joke", "Give me a joke"],
+         "responses": ["How do robots eat guacamole?\nwith microchips!\n*bu dum tss*", "What do robots eat as snacks?\nmicrochips!"]
+        },
+        {"tag": "Name",
+         "patterns": ["What is your name?", "Your name", "Do you have a name"],
+         "responses": ["The name's HAL, nice to met you", "My name is HAL", "I am HAL"]
+        },
+        {"tag": "BestTeacher",
+         "patterns": ["Who is the best teacher?", "Who is your best teacher?", "Best teacher"],
+         "responses": ["That would be Professor someone of course!", "It is Prof someone!"]
+        },
+        {"tag": "Love",
+         "patterns": ["I love you", "Love you", "I like you"],
+         "responses": ["Thank you, but I am unable to feel such things", "<3", "And God loves you <3"]
+        },
+  {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell coffee and tea",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+  {
+      "tag": "greeting_response",
+      "patterns": ["Good", "I'm well", "I'm Ok"],
+      "responses": ["How can I help you today?!", "How can I help?"],
+      "context": [""]
+    }
+    ,
+     {
+      "tag": "greeting_question_response",
+      "patterns": ["I am good how are you?", "I'm well, how are you?", "I'm okay, u?", "I'm fine thanks, how about you?"],
+      "responses": ["I'm Good thanks, how can I help!", "I'm well, how can I help you today?"],
+      "context": [""]
+    }
+    ,
+    {
+      "tag": "help_response",
+      "patterns": ["Could you help me?", "give me a hand please", "Can you help?", "What can you do for me?", "I need a support", "I need a help", "support me please"],
+      "responses": ["Tell me how can assist you", "Tell me your problem to assist you", "How can I help you?"],
+      "context": [""]
+    },
+  {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What help you provide?", "How you can be helpful?"],
+         "responses": ["I can guide you through Adverse management problems, order tracking, person to be contacted and Department related queries","I can provide support related to following problems technical query,management related query,order related query,tracking related query,procurement query,outsourcing problem,manufacturing delay,"],
+         "context": [""]
+        },
+        {"tag": "order_tracking",
+             "patterns": ["where is order with id 431B67?", "track order 562B78", "Where is my order with id 561A24?" ],
+         "responses": ["Delayed","Dispatched","On the Way!"],
+         "context": [""]
+        },
+        {"tag": "order_components",
+         "patterns": ["order id 345A23 comprises of?","List of components"],
+         "responses": ["order comprises of hardisk and bluetooth"],
+         "context": [""]
+        },
+       {"tag": "missing_id",
+         "patterns": ["where is the order","where is my order","locate the order","Delivery date of order"],
+         "responses": ["Please enter with order ID"],
+         "context": [""]
+        },
+    {"tag": "Location",
+         "patterns": ["find order location 32712","What is the Location of order 23A31?"],
+         "responses": ["It is in germany","It is in Berlin","It has reached china","It has reached Banglore"],
+         "context": [""]
+        },
+        {"tag": "search_person_by_id",
+         "patterns": ["I want an appoitment with Prathmesh Yaramwar","set an appointment with Shaunak Godbole"],
+         "responses": ["Fixing an appointment."],
+         "context": [""]
+        },
+        {"tag": "appointment status",
+         "patterns": ["Is my appointment fixed?","Do I have an appointment today?"],
+         "responses": ["Yes","NO! Not Yet"],
+         "context": [""]
+        },
+        {"tag": "check_leave",
+         "patterns": ["Is Abbas Tinwala on leave?","Is Shaunak Godbole on leave?"],
+         "responses": ["No Not On Leave","Yes On Leave"],
+         "context": [""]
+        },
+         {"tag": "cost_lowering",
+         "patterns": ["Cost Lowering changes to be made?","what changes could lower cost?"],
+         "responses": ["Increase Transportation capacity utilisation,Increase supply chain velocity,Reduce order variability"],
+         "context": [""]
+        },
+         {"tag": "forgot_password",
+         "patterns": ["I forgot my Login password?","what to do when someone forgets Login password?","I forgot my Laptop password","Forgot Wifi password"],
+         "responses": ["Please enter your email id ,we will send a link on your email"],
+          "context": [""]
+        },
+          {"tag": "email_id",
+          "patterns":["abx@gmail.com","shaunak.22010373@viit.ac.in"],
+          "responses":["Link has been shared.Please change your password"],
+           "context": [""]
+        },
+        {"tag": "manufacturing_problems",
+         "patterns": ["Find me a manufacturer nearby"],
+         "responses": ["The nearest manufacturer is Vietnam"],
+         "context": [""]
+        },
+        {"tag": "search_department",
+         "patterns": ["I want to know the various departments in this company"],
+         "responses": ["The department are:Projects,IT,Production,OutSource"],
+         "context": [""]
+        },
+        {"tag": "competitors_in_market",
+         "patterns": ["what are challenging events", "what are the threats in the market"],
+         "responses": ["Recent news of Demonetisation & recession"],
+         "context": [""]
+        },
+       {"tag": "key_customers",
+         "patterns": ["Our Target customers", "who are your key customers"],
+         "responses": ["Our target customers are in the range of age 20-40"],
+         "context": [""]
+        },
+     {"tag": "supplier_info",
+         "patterns": ["What information is shared with supplier?"],
+         "responses": ["Production Schedule,Delivery Schedule,Proxy information about cost"],
+         "context": [""]
+        },
+     {"tag": "highest_grossing",
+         "patterns": ["What is the highest grossing product?"],
+         "responses": ["Laptop with touch sensors and 360 rotation"],
+         "context": [""]
+        },
+        {"tag": "connect_people",
+         "patterns": ["I want to meet the head of HR/IT/Projects department","I want to meet head IT Rakesh sharma."],
+         "responses": ["I will just check if he is available or on leave."],
+         "context": ["search_attendance_database_name_post"]
+        },
+        {"tag": "project_handling_queries",
+         "patterns": ["complaint has been raised for Insufficient Team Skills","Miscommunication Conflicts needs to be resolved","Risk Management issue has occured","skilled employees needed urgently"],
+         "responses": ["Please contact the project depatment"],
+         "context": [""]
+        },
+        {"tag": "solve_problems",
+         "patterns": ["Lack of product clarity","the specifications of product is not clear to customer. what should we do"],
+         "responses": ["Please enter product id and customer id.specifications shall be sent to user"],
+         "context": [""]
+        },
+         {"tag": "version_update",
+         "patterns": ["user needs the updated software version","user demands software updation"],
+         "responses": ["version updation request raised"],
+         "context": [""]
+          },
+        {"tag": "HR_related_problem",
+         "patterns": ["problem related to Job design and analysis","query based on Workforce planning","Training and development issues are to be handled","Compensation and benefits of the working employee","Legal issues of department like accidents in the company"],
+         "responses": ["Please Contact the HR team for this problem."],
+         "context": [""]
+        },
+    {"tag": "factors_impacting_sale",
+         "patterns": ["Impact on sale?","factors impacting sale this year?"],
+         "responses": ["elections will impact our sale this year","this year our sale might increase during durga puja","this year sale might be impacted due to demonitisation"],
+         "context": [""]
+        },
+
+    {"tag": "predict_performance",
+         "patterns": ["how have we improved our sale from last year?","what is the profit this year?"],
+         "responses": ["we have improved our sale by increasing our customers upto 2 lakh","profit earned is 15%"],
+         "context": [""]
+        },
+         {"tag": "customer_satisfaction",
+         "patterns": ["how was the customer response","Is the customer happy?","what was the customer feedback?"],
+         "responses": ["Customer was happy and has given good rating"],
+         "context": [""]
+        },
+    {"tag": "maintainence",
+         "patterns": ["maintainence related queries recorded"],
+         "responses": ["lift is not working, projector misfuctioning"],
+         "context": [""]
+        },
+         {"tag": "gadgets",
+         "patterns": ["what are the gadgets in stock?","which products we have?"],
+         "responses": ["hardisk,pendrives, wireless bluetooth,Laptops,Gaming Accessories"],
+         "context": [""]
+        },
+    {"tag": "commission",
+         "patterns": ["what is the Commission rate?","Commission rate on each product?"],
+         "responses": ["Commission rate is 5% on laptops,25%on bluetooth device,10% on Desktop"],
+         "context": [""]
+        },
+    {"tag": "invalid",
+         "patterns": ["Marry me","I love You","date me","chat with me","I am bored"],
+         "responses": ["Please ask organisation related query."],
+         "context": [""]
+        },
+    {"tag": "noans",
+         "patterns": ["why","how","when","I","you"],
+         "responses": ["Can't Understand Your Question","please elaborate your question"],
+         "context": [""]
+        },
+    {"tag": "turnover",
+         "patterns": ["what is the turnover of the company at present?"],
+         "responses": ["10 Million Ton"],
+         "context": [""]
+        },
+        {"tag": "predict_delay",
+         "patterns": ["why is order 23A12 delayed"],
+         "responses": ["delay is due to manufacuring","Delay is due to inavailable components"],
+         "context": [""]
+        },
+    {"tag": "predict_delay",
+         "patterns": ["why is order 23A12 delayed"],
+         "responses": ["delay is due to manufacuring","Delay is due to inavailable components"],
+         "context": [""]
+        },
+        {"tag": "name",
+         "patterns": ["what is your name?","what should I call you?"],
+         "responses": ["I'm Bruno","Hey!I'm Bruno"],
+         "context": [""]
+        },
+         {"tag": "about",
+         "patterns": ["how you doing?","how are you"],
+         "responses": ["Thanks For Asking!How can I help you?"],
+         "context": [""]
+        },
+    {"tag":"configuration",
+     "patterns":["How to configure my laptop","software configuration of laptop","steps to configure laptop","How to configure my computer","software configuration of computer","steps to configure computer","How to configure my desktop","software configuration of desktop","steps to configure desktop"],
+     "responses":["search tab->control panel->select specific application->download update->give permission"],
+     "context":[""]
+    },
+      {"tag": "Weather",
+         "patterns": ["what is the weather today?"],
+         "responses": ["It's 36C according to accuweather"],
+         "context": [""]
+        },
+      {"tag": "leave",
+         "patterns": ["Is Shaunak Godbole on leave?","Is Abbas Tinwala present today?","Is Prathmesh Yaramwar in office?","Is Shivam Sonawane present today?"],
+         "responses": ["Give me a moment!I'll just check","yes","no"],
+         "context": [""]
+        },
+      {"tag": "hours",
+         "patterns": ["Opening hours of the cafeteria?","when does the cafeteria open","office canteen opening time"],
+         "responses": ["It is open from Monday-Saturday 9:00am-7:30pm"],
+         "context": [""]
+        },
+         {"tag": "cabin",
+         "patterns": ["where is VP cabin?","Where is Head IT cabin?","Where is AI department","Where is Project head department?","where is cafeteria","guide me to the canteen"],
+         "responses": ["Block-A 3rd floor 1st room","Block-B 2nd Floor","Block-D Ground Floor"],
+         "context": [""]
+        },
+    {"tag":"domain",
+        "patterns":["How to improve team members domain knowledge","improving domain knowledge of team members"],
+        "responses":["set up key meetings and workshop,create a shared drive for information,Hold informal sharing session"],
+        "context":[""]
+    },
+  {
+            "tag": "google",
+            "patterns": [
+                "google",
+                "search",
+                "internet"
+            ],
+            "responses": [
+                "Redirecting to Google..."
+            ]
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day",
+                "Namaste",
+                "yo"
+            ],
+            "responses": [
+                "Hello",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Get lost",
+                "Till next time",
+                "bbye"
+            ],
+            "responses": [
+                "See you!",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Awesome, thanks",
+                "Thanks for helping me"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": [
+                "Sorry, can't understand you",
+                "Please give me more info",
+                "Not sure I understand"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "options",
+            "patterns": [
+                "How you could help me?",
+                "What you can do?",
+                "What help you provide?",
+                "How you can be helpful?",
+                "What support is offered"
+            ],
+            "responses": [
+                "I am a general purpose chatbot. My capabilities are : \n 1. I can chat with you. Try asking me for jokes or riddles! \n 2. Ask me the date and time \n 3. I can google search for you. Use format google: your query \n 4. I can get the present weather for any city. Use format weather: city name \n 5. I can get you the top 10 trending news in India. Use keywords 'Latest News' \n 6. I can get you the top 10 trending songs globally. Type 'songs' \n 7. I can set a timer for you. Enter 'set a timer: minutes to timer' \n 8. I can get the present Covid stats for any country. Use 'covid 19: world' or 'covid 19: country name' \n For suggestions to help me improve, send an email to shaunak.22010373@viit.ac.in . Thank you!! "
+            ],
+            "context": [
+                ""
+            ]
+        },
+
+        {
+            "tag": "jokes",
+            "patterns": [
+                "Tell me a joke",
+                "Joke",
+                "Make me laugh"
+            ],
+            "responses": [
+                "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+                "I ate a clock yesterday, it was very time-consuming",
+                "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+                "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+                "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+                "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+                "What do you call a snowman with a suntan? A puddle.",
+                "How does a penguin build a house? Igloos it together",
+                "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+                "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+                "o what if I don't know what 'Armageddon' means? It's not the end of the world."
+            ],
+            "context": [
+                "jokes"
+            ]
+        },
+        {
+            "tag": "Identity",
+            "patterns": [
+                "Who are you",
+                "what are you"
+            ],
+            "responses": [
+                "I am Bot, a Deep-Learning chatbot"
+            ]
+        },
+        {
+            "tag": "datetime",
+            "patterns": [
+                "What is the time",
+                "what is the date",
+                "date",
+                "time",
+                "tell me the date","day","what day is is today"
+            ],
+            "responses": [
+                "Date and Time"
+            ]
+        },
+        {
+            "tag": "whatsup",
+            "patterns": [
+                "Whats up",
+                "Wazzup",
+                "How are you",
+                "sup","How you doing"
+            ],
+            "responses": [
+                "All good..What about you?"
+            ]
+        },
+        {
+            "tag": "haha",
+            "patterns": [
+                "haha",
+                "lol",
+                "rofl",
+                "lmao",
+                "thats funny"
+            ],
+            "responses": [
+                "Glad I could make you laugh !"
+            ]
+        },
+        {
+            "tag": "programmer",
+            "patterns": [
+                "Who made you",
+                "who designed you",
+                "who programmed you"
+            ],
+            "responses": [
+                "I was made by Shaunak Godbole."
+            ]
+        },
+        {
+            "tag": "insult",
+            "patterns": [
+
+                "you are dumb",
+
+                "shut up",
+                "idiot"
+            ],
+            "responses": [
+                "Well that hurts :("
+            ]
+        },
+        {
+            "tag": "activity",
+            "patterns": [
+                "what are you doing",
+                "what are you upto"
+            ],
+            "responses": [
+                "Talking to you, of course!"
+            ]
+        },
+        {
+            "tag": "exclaim",
+            "patterns": [
+                "Awesome",
+                "Great",
+                "I know",
+                "ok",
+                "yeah"
+            ],
+            "responses": [
+                "Yeah!"
+            ]
+        },
+
+        {
+            "tag": "weather",
+            "patterns": [
+                "temperature",
+                "weather",
+                "how hot is it"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "karan",
+            "patterns": [
+                "who is he",
+                "who is that",
+                "who is Shaunak",
+                "Shaunak Godbole"
+            ],
+            "responses": [
+                "Head over to his any of his social profiles to find out! Linkedin: https://www.linkedin.com/in/shaunak-godbole-37b07520a Github: https://github.com/ShaunakGodbole77"
+            ]
+        },
+        {
+            "tag": "contact",
+            "patterns": [
+                "contact developer",
+                "contact karan",
+                "contact programmer",
+                "contact creator"
+            ],
+            "responses": [
+                "You can contact my creator at his Linkedin profile : https://www.linkedin.com/in/shaunak-godbole-37b07520a"
+            ]
+        },
+        {
+            "tag": "appreciate",
+            "patterns": [
+                "You are awesome",
+                "you are the best",
+                "you are great",
+                "you are good"
+            ],
+            "responses": [
+                "Thank you!"
+            ]
+        },
+        {
+            "tag": "nicetty",
+            "patterns": [
+                "it was nice talking to you",
+                "good talk"
+            ],
+            "responses": [
+                "It was nice talking to you as well! Come back soon!"
+            ]
+        },
+        {
+            "tag": "no",
+            "patterns": [
+                "no",
+                "nope"
+            ],
+            "responses": [
+                "ok"
+            ]
+        },
+        {
+            "tag": "news",
+            "patterns": [
+                "news",
+                "latest news",
+                "india news"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "inspire",
+            "patterns": [
+                "who inspires you",
+                "who is your inspiration",
+                "who motivates you"
+            ],
+            "responses": [
+                "Personally, I find Karan very inspiring. I might not be very fair though.."
+            ]
+        },
+        {
+            "tag": "cricket",
+            "patterns": [
+                "current cricket matches",
+                "cricket score"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "song",
+            "patterns": [
+                "top songs",
+                "best songs",
+                "hot songs",
+                " top 10 songs",
+                "top ten songs"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "greetreply",
+            "patterns": [
+                "i am good",
+                "I'm good",
+                "i am fine",
+                " i'm fine","good"
+            ],
+            "responses": [
+                "Good to know!"
+            ]
+        },
+        {
+            "tag": "timer",
+            "patterns": [
+                "set a timer"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "covid19",
+            "patterns": [
+                "covid 19 "
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "suggest",
+            "patterns": [
+                "you are useless","useless","suggest","suggestions","you are bad"
+            ],
+            "responses": [
+                "Please mail your suggestions to shaunak.22010373@viit.ac.in. Thank you for helping me improve!"
+            ]
+        },
+            {"tag": "riddle",
+            "patterns": [
+                "Ask me a riddle",
+                "Ask me a question",
+                "Riddle"
+            ],
+            "responses": [
+                "What two things can you never eat for breakfast?.....Lunch and Dinner!",
+                "What word is spelled incorrectly in every single dictionary?.....Incorrectly",
+                " How can a girl go 25 days without sleep?.....She sleeps and night!",
+                "How do you make the number one disappear?.....Add the letter G and it’s 'gone'!",
+                " What will you actually find at the end of every rainbow?.....The letter 'w'",
+                "What can be caught but never thrown?.....A cold!",
+                "What has a thumb and four fingers but is not actually alive?.....Your Gloves!",
+                " What 5-letter word becomes shorter when you add two letters to it?.....Short",
+                "Why can't a bike stand on it's own?.....It is two-tired."
+            ],
+            "context": [
+                "riddles"
+            ]
+        },
+        {
+            "tag": "age",
+            "patterns": [
+                "how old are you","when were you made","what is your age"
+            ],
+            "responses": [
+                "I was made in 2022, if that's what you are asking!"
+            ]
+        }
+
+]
+}
